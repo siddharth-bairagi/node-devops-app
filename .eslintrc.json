@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> e9bceaaa8ffa0cd89d04b105e7f2ab72d7a83d39
 {
   "env": {
     "node": true,
@@ -14,4 +10,4 @@
     "sourceType": "module"
   },
   "rules": {}
-
+}
