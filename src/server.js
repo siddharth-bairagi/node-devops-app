@@ -4,14 +4,14 @@ const usersRouter = require('./routes/users');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
+const path = require('path');
 
-// Root route
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Winlancer DevOps Demo API is running',
-    env: process.env.NODE_ENV || 'development',
-  });
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '..', 'public')));
+
+// Simple env info for the frontend
+app.get('/api/env', (req, res) => {
+  res.json({ env: process.env.NODE_ENV || 'development' });
 });
 
 // Health check route - used by Docker, load balancers, monitoring tools
